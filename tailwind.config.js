@@ -6,15 +6,13 @@ export default {
   ],
   theme: {
     colors: {
-      'primary': {
-        'light': '#0c2649',
-        'dark': '#091c34' ,
-      } ,
+      'royal-blue': '#4169E1',
+      'royal-blue-dark': '#2e4f8b',
       'dark': '#041120',
       'white': '#ffffff'
     },
     fontFamily: {
-      poppins : ['Poppins', 'sans-serif']
+      poppins: ['Poppins', 'sans-serif']
     },
     extend: {},
   },
