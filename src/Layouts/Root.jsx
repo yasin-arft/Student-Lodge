@@ -18,7 +18,7 @@ const Root = () => {
         </EstateContextProvider>
 
       </div>
-      <div className=" bg-royal-blue text-white mt-5">
+      <div className=" bg-dark text-white mt-5">
         <Footer />
       </div>
     </div>

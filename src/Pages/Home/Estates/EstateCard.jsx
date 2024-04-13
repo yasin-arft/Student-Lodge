@@ -1,8 +1,11 @@
 import PropTypes from 'prop-types';
 import { IoCheckmarkDone } from "react-icons/io5";
+import { useNavigate } from 'react-router-dom';
 
 const EstateCard = ({ estate }) => {
-  const { estate_title, image, segment_name, description, location, facilities, price, status, area } = estate;
+  const { id, estate_title, image, segment_name, description, location, facilities, price, status, area } = estate;
+
+  const navigate = useNavigate();
 
   return (
     <div className="card p-5 border border-gray">
@@ -46,7 +49,7 @@ const EstateCard = ({ estate }) => {
 
         {/* view property btn */}
         <div className="card-actions">
-          <button className="btn bg-royal-blue text-white hover:bg-royal-blue-dark mt-4">View Property</button>
+          <button onClick={() => navigate(`/estate_details/${id}`)} className="btn bg-royal-blue text-white hover:bg-royal-blue-dark mt-4">View Property</button>
         </div>
       </div>
     </div>
