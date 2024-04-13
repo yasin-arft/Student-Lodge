@@ -9,7 +9,8 @@ export default {
       'royal-blue': '#4169E1',
       'royal-blue-dark': '#2e4f8b',
       'dark': '#041120',
-      'white': '#ffffff'
+      'white': '#ffffff',
+      'gray': '#d3d3d3'
     },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif']

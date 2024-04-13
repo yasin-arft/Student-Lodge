@@ -6,7 +6,7 @@
     "segment_name": "Student Housing",
     "description": "A modern apartment complex designed specifically for student living, featuring spacious units and convenient amenities.",
     "price": 1000,
-    "status": "rent",
+    "status": "Rent",
     "area": 800,
     "location": "University District, Dhaka, Bangladesh",
     "facilities": ["Fully Furnished Units", "Study Areas", "Fitness Center", "Laundry Facilities", "Security"]
@@ -16,9 +16,9 @@
     "estate_title": "Shared Student House Near Campus",
     "id": 2,
     "segment_name": "Student Housing",
-    "description": "A cozy shared student house located within walking distance to campus, offering affordable rent and a vibrant community atmosphere.",
+    "description": "A cozy shared student house located within walking distance to campus, offering affordable Rent and a vibrant community atmosphere.",
     "price": 600,
-    "status": "rent",
+    "status": "Rent",
     "area": 1500,
     "location": "Student Neighborhood, Chittagong, Bangladesh",
     "facilities": ["Shared Kitchen", "Common Areas", "Outdoor Space", "Internet Access"]
@@ -30,7 +30,7 @@
     "segment_name": "Student Housing",
     "description": "A comfortable private studio apartment conveniently located near the university campus, ideal for focused studying and independent living.",
     "price": 900,
-    "status": "rent",
+    "status": "Rent",
     "area": 500,
     "location": "Close to University Campus, Rajshahi, Bangladesh",
     "facilities": ["Private Bathroom", "Kitchenette", "Study Desk", "Utilities Included"]
@@ -42,7 +42,7 @@
     "segment_name": "Student Housing",
     "description": "A luxurious student residence offering upscale amenities and services, creating a sophisticated living environment for students.",
     "price": 1500,
-    "status": "rent",
+    "status": "Rent",
     "area": 1000,
     "location": "Prime Location, Sylhet, Bangladesh",
     "facilities": ["Private Bedroom", "Ensuite Bathroom", "Gourmet Kitchen", "Gym", "24/7 Concierge"]
@@ -54,7 +54,7 @@
     "segment_name": "Student Housing",
     "description": "An affordable student apartment offering comfortable living spaces and essential amenities, suitable for budget-conscious students.",
     "price": 700,
-    "status": "rent",
+    "status": "Rent",
     "area": 600,
     "location": "Near Campus, Dhaka, Bangladesh",
     "facilities": ["Kitchen", "Study Area", "Laundry Facilities", "Bike Storage"]
@@ -66,7 +66,7 @@
     "segment_name": "Student Housing",
     "description": "A cozy studio apartment conveniently located near the university campus, offering comfort and convenience for student living.",
     "price": 800,
-    "status": "rent",
+    "status": "Rent",
     "area": 400,
     "location": "Walking Distance to Campus, Sylhet, Bangladesh",
     "facilities": ["Private Bathroom", "Kitchenette", "Study Nook", "Wi-Fi"]

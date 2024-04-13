@@ -14,7 +14,7 @@ const Root = () => {
 
         {/* estate data provider */}
         <EstateContextProvider value={estates}>
-          <Outlet></Outlet>
+          <Outlet />
         </EstateContextProvider>
 
       </div>

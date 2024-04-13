@@ -1,13 +1,9 @@
-import { useContext } from "react";
-import { EstateContext } from "../../Providers/EstateContextProvider";
+import Estates from "./Estates/Estates";
 
 const Home = () => {
-  const estates = useContext(EstateContext);
-  console.log(estates);
-  
   return (
     <div>
-      home
+      <Estates />
     </div>
   );
 };
