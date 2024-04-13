@@ -18,7 +18,7 @@ const Login = () => {
         {/* password */}
         <label className="form-control w-full">
           <div className="label">
-            <span className="label-text text-base font-medium mt-2">Password</span>
+            <span className="label-text text-base font-medium">Password</span>
           </div>
           <input type="text" placeholder="Your password" className="input input-bordered w-full" />
         </label>
