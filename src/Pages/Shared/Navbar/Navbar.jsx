@@ -48,10 +48,10 @@ const Navbar = () => {
                       <FaRegUserCircle className="text-2xl text-white" />
                     </button>
                   </div>
-                  <a className="btn bg-transparent px-6 py-3 min-h-0 h-auto border-2 border-transparent hover:bg-transparent hover:text-royal-blue hover:border-2 hover:border-royal-blue">Logout</a>
+                  <button className="btn bg-transparent px-6 py-3 min-h-0 h-auto border-2 border-transparent hover:bg-transparent hover:text-royal-blue hover:border-2 hover:border-royal-blue">Logout</button>
                 </> :
                 <>
-                  <NavLink className="btn px-6 py-3 min-h-0 h-auto bg-royal-blue text-white border-2 border-transparent hover:bg-[#2E4F8B] hover:border-transparent">Login</NavLink>
+                  <NavLink className="btn px-6 py-3 min-h-0 h-auto bg-royal-blue text-white border-2 border-transparent hover:bg-[#2E4F8B] hover:border-transparent" to={'/login'}>Login</NavLink>
                 </>
             }
           </div>
