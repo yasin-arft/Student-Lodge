@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "image": "https://i.ibb.co/z2cWDvQ/dhaka.jpg",
+    "location": "Dhaka, Bangladesh"
+  },
+  {
+    "id": 2,
+    "image": "https://i.ibb.co/4mg3DY1/chottogram.jpg",
+    "location": "Chittagong, Bangladesh"
+  },
+  {
+    "id": 3,
+    "image": "https://i.ibb.co/Q8nfhTb/rajshahi.jpg",
+    "location": "Rajshahi, Bangladesh"
+  },
+  {
+    "id": 4,
+    "image": "https://i.ibb.co/zf4w94x/sylhet.jpg",
+    "location": "Sylhet, Bangladesh"
+  }
+]
