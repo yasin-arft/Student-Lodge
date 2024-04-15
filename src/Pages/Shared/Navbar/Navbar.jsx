@@ -6,7 +6,14 @@ import { AuthContext } from "../../../Providers/AuthContextProvider";
 
 const Navbar = () => {
   // current user data 
-  const { currentUser } = useContext(AuthContext);
+  const { currentUser, logOutUser } = useContext(AuthContext);
+
+  // log out handler
+  const handleLogOut = () => {
+    logOutUser()
+      .then()
+      .catch()
+  }
 
   // data for nab item
   const navLinksData = [
@@ -50,9 +57,11 @@ const Navbar = () => {
                       <FaRegUserCircle className="text-2xl text-white" />
                     </button>
                   </div>
-                  <button className="btn bg-transparent px-6 py-3 min-h-0 h-auto border-2 border-transparent hover:bg-transparent hover:text-royal-blue hover:border-2 hover:border-royal-blue">Logout</button>
+                  {/* log out btn */}
+                  <button onClick={handleLogOut} className="btn bg-transparent px-6 py-3 min-h-0 h-auto border-2 border-transparent hover:bg-transparent hover:text-royal-blue hover:border-2 hover:border-royal-blue">Logout</button>
                 </> :
                 <>
+                  {/* send to login page */}
                   <NavLink className="btn px-6 py-3 min-h-0 h-auto bg-royal-blue text-white border-2 border-transparent hover:bg-[#2E4F8B] hover:border-transparent" to={'/login'}>Login</NavLink>
                 </>
             }
