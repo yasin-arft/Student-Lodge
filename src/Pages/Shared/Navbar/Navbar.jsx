@@ -52,9 +52,17 @@ const Navbar = () => {
             {
               currentUser ?
                 <>
-                  <div className="tooltip tooltip-left" data-tip="hello">
-                    <button className=" bg-royal-blue p-2 rounded-full">
-                      <FaRegUserCircle className="text-2xl text-white" />
+                  <div className="tooltip tooltip-left" data-tip={
+                    currentUser?.displayName ?
+                    currentUser.displayName :
+                    'Not Provided'
+                    }>
+                    <button className=" bg-royal-blue border-4 border-royal-blue rounded-full overflow-hidden">
+                      {
+                        currentUser?.photoURL ?
+                        <img className="size-10" src={currentUser.photoURL} alt='Profile Picture' /> :
+                        <FaRegUserCircle className="text-2xl text-white" />
+                      }
                     </button>
                   </div>
                   {/* log out btn */}
