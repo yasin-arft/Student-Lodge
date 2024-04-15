@@ -1,10 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import OurNavLink from "./OurNavLink";
 import { FaRegUserCircle } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthContextProvider";
 
 const Navbar = () => {
-  // user state
-  const user = false;
+  // current user data 
+  const { currentUser } = useContext(AuthContext);
 
   // data for nab item
   const navLinksData = [
@@ -41,7 +43,7 @@ const Navbar = () => {
           </div>
           <div className="navbar-end gap-2">
             {
-              user ?
+              currentUser ?
                 <>
                   <div className="tooltip tooltip-left" data-tip="hello">
                     <button className=" bg-royal-blue p-2 rounded-full">
