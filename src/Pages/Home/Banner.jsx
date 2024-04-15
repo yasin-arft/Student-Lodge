@@ -20,8 +20,6 @@ const Banner = () => {
       .then(data => setBannerDate(data));
   }, []);
 
-  console.log(bannerData);
-
   return (
     <section className='mb-10'>
       <Swiper
