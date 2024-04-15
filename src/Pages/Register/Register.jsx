@@ -1,23 +1,32 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthContextProvider";
 
 const Register = () => {
   // auth context data 
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   // react hook form 
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   // register handler
   const handleRegister = (data) => {
+    const name = data.name;
+    const photo = data.photo;
     const email = data.email;
     const password = data.password;
 
     // create user
     createUser(email, password)
-      .then(user => console.log(user))
+      .then(() => {
+        updateUserProfile(name, photo)
+          .then(() => {
+            navigate('/');
+          })
+          .catch();
+      })
       .catch(error => console.log(error));
   }
 
@@ -46,7 +55,7 @@ const Register = () => {
             <span className="label-text text-base font-medium">Photo Url</span>
           </div>
           <input
-            {...register('photoUrl')}
+            {...register('photo')}
             type="text"
             placeholder="Paste your photo url"
             className="input input-bordered w-full" />
@@ -65,7 +74,7 @@ const Register = () => {
                 message: 'Please provide a valid email'
               }
             })}
-            type="text"
+            type="email"
             placeholder="example@email.com"
             className="input input-bordered w-full" />
         </label>
@@ -84,7 +93,7 @@ const Register = () => {
                 message: 'Password must contain an uppercase letter, lowercase letter and 6 characters'
               }
             })}
-            type="text"
+            type="password"
             placeholder="Your password"
             className="input input-bordered w-full" />
         </label>
