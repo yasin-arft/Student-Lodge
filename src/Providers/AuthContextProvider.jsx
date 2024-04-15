@@ -9,25 +9,31 @@ const AuthContextProvider = ({ children }) => {
   // current user state
   const [currentUser, setCurrentUser] = useState(null);
 
+  // loading state
+  const [loading, setLoading] = useState(true);
+
   // create user 
   const createUser = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   }
 
   // login 
   const loginUser = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   }
 
   // log out
   const logOutUser = () => {
+    setLoading(true);
     return signOut(auth);
   }
 
   // observer
   onAuthStateChanged(auth, (user) => {
     setCurrentUser(user);
-    console.log(user);
+    setLoading(false);
   });
 
   // update profile
@@ -41,6 +47,7 @@ const AuthContextProvider = ({ children }) => {
   // auth value
   const AuthInfo = {
     currentUser,
+    loading,
     createUser,
     loginUser,
     logOutUser,
