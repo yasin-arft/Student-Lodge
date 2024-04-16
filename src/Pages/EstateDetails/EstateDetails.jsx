@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { EstateContext } from "../../Providers/EstateContextProvider";
 import { useParams } from "react-router-dom";
 import { IoCheckmarkDone } from "react-icons/io5";
+import { Helmet } from "react-helmet-async";
 
 const EstateDetails = () => {
   const { id } = useParams();
@@ -12,6 +13,11 @@ const EstateDetails = () => {
 
   return (
     <div className="hero">
+      
+      <Helmet>
+        <title>Student Lodge | {estate_title} </title>
+      </Helmet>
+
       <div className="hero-content flex-col lg:flex-row">
         <img src={image} className="max-w-sm rounded-lg shadow-2xl" />
         <div>
@@ -30,13 +36,13 @@ const EstateDetails = () => {
             }
           </ul>
           {/* info */}
-        <div className='flex gap-4 flex-wrap font-medium mt-3'>
-          <span className='bg-[#ddd] px-4 py-1 rounded-full'>{segment_name}</span>
-          <span className='bg-[#ddd] px-4 py-1 rounded-full'>For {status}</span>
-          <span className='bg-[#ddd] px-4 py-1 rounded-full'>Price: {price} BDT</span>
-          <span className='bg-[#ddd] px-4 py-1 rounded-full'>Area: {area} sqft</span>
-          <span>Location: {location}</span>
-        </div>
+          <div className='flex gap-4 flex-wrap font-medium mt-3'>
+            <span className='bg-[#ddd] px-4 py-1 rounded-full'>{segment_name}</span>
+            <span className='bg-[#ddd] px-4 py-1 rounded-full'>For {status}</span>
+            <span className='bg-[#ddd] px-4 py-1 rounded-full'>Price: {price} BDT</span>
+            <span className='bg-[#ddd] px-4 py-1 rounded-full'>Area: {area} sqft</span>
+            <span>Location: {location}</span>
+          </div>
         </div>
       </div>
     </div>

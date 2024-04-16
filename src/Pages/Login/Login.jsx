@@ -3,6 +3,7 @@ import { FaGoogle, FaGithub } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthContextProvider";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   // auth context data 
@@ -45,6 +46,11 @@ const Login = () => {
 
   return (
     <div className="max-w-md mx-auto">
+      
+      <Helmet>
+        <title>Student Lodge | Login</title>
+      </Helmet>
+
       <h2 className="text-3xl font-semibold text-center my-4">Login</h2>
 
       {/* login form */}

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthContextProvider";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   // auth context data 
@@ -32,6 +33,11 @@ const Register = () => {
 
   return (
     <div className="max-w-md mx-auto">
+      
+      <Helmet>
+        <title>Student Lodge | Register</title>
+      </Helmet>
+
       <h2 className="text-3xl font-semibold text-center my-4">Register</h2>
 
       {/* register form */}
