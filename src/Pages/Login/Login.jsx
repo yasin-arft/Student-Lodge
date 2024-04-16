@@ -39,7 +39,7 @@ const Login = () => {
             {...register('email', {
               required: 'Provide your email'
             })}
-            type="text" placeholder="example@email.com" className="input input-bordered w-full" />
+            type="email" placeholder="example@email.com" className="input input-bordered w-full" />
         </label>
         {errors.email && (<small className="text-error">{errors.email.message}</small>)}
 
@@ -52,7 +52,7 @@ const Login = () => {
             {...register('password', {
               required: 'Provide your password'
             })}
-            type="text" placeholder="Your password" className="input input-bordered w-full" />
+            type="password" placeholder="Your password" className="input input-bordered w-full" />
         </label>
         {errors.password && (<small className="text-error">{errors.password.message}</small>)}
 
