@@ -105,8 +105,8 @@ const Register = () => {
               })}
               type={
                 showPassword ?
-                'text' :
-                'password'
+                  'text' :
+                  'password'
               }
               placeholder="Your password"
               className="input input-bordered w-full" />

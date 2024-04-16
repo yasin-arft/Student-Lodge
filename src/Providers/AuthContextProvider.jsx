@@ -68,6 +68,7 @@ const AuthContextProvider = ({ children }) => {
   const AuthInfo = {
     currentUser,
     loading,
+    setLoading,
     createUser,
     loginUser,
     logOutUser,

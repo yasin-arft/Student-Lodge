@@ -18,8 +18,10 @@ const Navbar = () => {
   // data for nab item
   const navLinksData = [
     { path: '/', text: 'Home' },
-    { path: '/update_profile', text: 'Update Profile' },
   ];
+
+  // adding update profile path conditionality
+  currentUser && navLinksData.push({ path: '/update_profile', text: 'Update Profile' })
 
   // render all nav items
   const navLinkItems = <>
@@ -54,14 +56,14 @@ const Navbar = () => {
                 <>
                   <div className="tooltip tooltip-left" data-tip={
                     currentUser?.displayName ?
-                    currentUser.displayName :
-                    'Not Provided'
-                    }>
+                      currentUser.displayName :
+                      'Not Provided'
+                  }>
                     <button className=" bg-royal-blue border-4 border-royal-blue rounded-full overflow-hidden">
                       {
                         currentUser?.photoURL ?
-                        <img className="size-10" src={currentUser.photoURL} alt='Profile Picture' /> :
-                        <FaRegUserCircle className="text-2xl text-white" />
+                          <img className="size-10" src={currentUser.photoURL} alt='Profile Picture' /> :
+                          <FaRegUserCircle className="text-2xl text-white" />
                       }
                     </button>
                   </div>
