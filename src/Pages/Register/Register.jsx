@@ -1,10 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthContextProvider";
 import { Helmet } from "react-helmet-async";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
   // auth context data 
   const { createUser, updateUserProfile } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -33,7 +36,7 @@ const Register = () => {
 
   return (
     <div className="max-w-md mx-auto">
-      
+
       <Helmet>
         <title>Student Lodge | Register</title>
       </Helmet>
@@ -91,17 +94,30 @@ const Register = () => {
           <div className="label">
             <span className="label-text text-base font-medium">Password</span>
           </div>
-          <input
-            {...register('password', {
-              required: 'Password is required',
-              pattern: {
-                value: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/,
-                message: 'Password must contain an uppercase letter, lowercase letter and 6 characters'
+          <div className="relative">
+            <input
+              {...register('password', {
+                required: 'Password is required',
+                pattern: {
+                  value: /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/,
+                  message: 'Password must contain an uppercase letter, lowercase letter and 6 characters'
+                }
+              })}
+              type={
+                showPassword ?
+                'text' :
+                'password'
               }
-            })}
-            type="password"
-            placeholder="Your password"
-            className="input input-bordered w-full" />
+              placeholder="Your password"
+              className="input input-bordered w-full" />
+            <button onClick={() => setShowPassword(!showPassword)} className="absolute right-2 top-1/2 -translate-y-1/2" >
+              {
+                showPassword ?
+                  <FaEye /> :
+                  <FaEyeSlash />
+              }
+            </button>
+          </div>
         </label>
         {errors.password && (<small className="text-error">{errors.password.message}</small>)}
 
