@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
@@ -6,7 +6,8 @@ import { AuthContext } from "../../Providers/AuthContextProvider";
 
 const Login = () => {
   // auth context data 
-  const { loginUser } = useContext(AuthContext);
+  const { loginUser, loginWithGoogle, loginWithGithub } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   // react hook form
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -18,10 +19,28 @@ const Login = () => {
 
     // login user
     loginUser(email, password)
-    .then(user => {
-      console.log(user);
-    })
-    .catch(error => console.log(error));
+      .then(() => {
+        navigate('/');
+      })
+      .catch(error => console.log(error));
+  }
+
+  // login with google handler
+  const handleGoogleLogin = () => {
+    loginWithGoogle()
+      .then(() => {
+        navigate('/');
+      })
+      .catch()
+  }
+
+  // login with google handler
+  const handleGithubLogin = () => {
+    loginWithGithub()
+      .then(() => {
+        navigate('/');
+      })
+      .catch()
   }
 
   return (
@@ -66,11 +85,11 @@ const Login = () => {
       <div className="divider">Or</div>
 
       {/* social login options */}
-      <button className="btn w-full border border-royal-blue text-royal-blue hover:border-royal-blue-dark hover:bg-royal-blue hover:text-white">
+      <button onClick={handleGoogleLogin} className="btn w-full border border-royal-blue text-royal-blue hover:border-royal-blue-dark hover:bg-royal-blue hover:text-white">
         <FaGoogle className="text-xl" />
         Login with Google
       </button>
-      <button className="btn w-full border border-royal-blue text-royal-blue hover:border-royal-blue-dark hover:bg-royal-blue hover:text-white mt-3">
+      <button onClick={handleGithubLogin} className="btn w-full border border-royal-blue text-royal-blue hover:border-royal-blue-dark hover:bg-royal-blue hover:text-white mt-3">
         <FaGithub className="text-xl" />
         Login with Github
       </button>
