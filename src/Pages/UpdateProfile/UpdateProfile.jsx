@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Providers/AuthContextProvider";
+import { toast } from 'react-toastify';
 
 const UpdateProfile = () => {
   // auth context data 
@@ -25,8 +26,11 @@ const UpdateProfile = () => {
     updateUserProfile(name, photo)
       .then(() => {
         setLoading(false);
+        toast('Profile Updated Successfully');
       })
-      .catch();
+      .catch(() => {
+        setLoading(false);
+      });
   }
   return (
     <div className="max-w-md mx-auto">

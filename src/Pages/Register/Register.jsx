@@ -4,12 +4,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthContextProvider";
 import { Helmet } from "react-helmet-async";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { toast } from 'react-toastify';
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   // auth context data 
-  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const { createUser, setLoading, updateUserProfile } = useContext(AuthContext);
   const navigate = useNavigate();
 
   // react hook form 
@@ -27,11 +28,15 @@ const Register = () => {
       .then(() => {
         updateUserProfile(name, photo)
           .then(() => {
+            toast('Registration successful!');
             navigate('/');
           })
           .catch();
       })
-      .catch(error => console.log(error));
+      .catch(() => {
+        toast('An unexpected error occurred!');
+        setLoading(false);
+      });
   }
 
   return (
@@ -110,13 +115,13 @@ const Register = () => {
               }
               placeholder="Your password"
               className="input input-bordered w-full" />
-            <button onClick={() => setShowPassword(!showPassword)} className="absolute right-2 top-1/2 -translate-y-1/2" >
+            <span onClick={() => setShowPassword(!showPassword)} className="absolute right-2 top-1/2 -translate-y-1/2" >
               {
                 showPassword ?
                   <FaEye /> :
                   <FaEyeSlash />
               }
-            </button>
+            </span>
           </div>
         </label>
         {errors.password && (<small className="text-error">{errors.password.message}</small>)}

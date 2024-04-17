@@ -4,10 +4,11 @@ import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthContextProvider";
 import { Helmet } from "react-helmet-async";
+import { toast } from 'react-toastify';
 
 const Login = () => {
   // auth context data 
-  const { loginUser, loginWithGoogle, loginWithGithub } = useContext(AuthContext);
+  const { setLoading, loginUser, loginWithGoogle, loginWithGithub } = useContext(AuthContext);
   const navigate = useNavigate();
 
   // react hook form
@@ -21,9 +22,13 @@ const Login = () => {
     // login user
     loginUser(email, password)
       .then(() => {
+        toast('Successfully logged in');
         navigate('/');
       })
-      .catch(error => console.log(error));
+      .catch(() => {
+        setLoading(false);
+        toast('An unexpected error occurred!');
+      });
   }
 
   // login with google handler
@@ -46,7 +51,7 @@ const Login = () => {
 
   return (
     <div className="max-w-md mx-auto">
-      
+
       <Helmet>
         <title>Student Lodge | Login</title>
       </Helmet>
