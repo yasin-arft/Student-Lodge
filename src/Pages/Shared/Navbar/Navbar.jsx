@@ -21,7 +21,8 @@ const Navbar = () => {
   ];
 
   // adding update profile path conditionality
-  currentUser && navLinksData.push({ path: '/update_profile', text: 'Update Profile' })
+  currentUser && navLinksData.push({ path: '/update_profile', text: 'Update Profile' });
+  currentUser && navLinksData.push({ path: '/support', text: 'Support' });
 
   // render all nav items
   const navLinkItems = <>

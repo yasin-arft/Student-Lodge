@@ -12,7 +12,6 @@ Features and Characteristics
 - Registration system
 - Update Profile
 - Private/Protected Route
-- 
 
 Challenge task packages
 -
