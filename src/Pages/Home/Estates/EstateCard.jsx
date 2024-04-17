@@ -8,16 +8,16 @@ const EstateCard = ({ estate }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="card p-5 border border-gray">
+    <div className="card p-3 md:p-5 border border-gray">
       <figure className='max-h-52'><img className='h-full w-full' src={image} alt="Shoes" /></figure>
-      <div className="card-body p-0 pt-6">
+      <div className="card-body p-0 pt-4 md:pt-6">
         {/* title */}
         <h2 className="card-title items-start line-clamp-1">{estate_title}</h2>
 
         {/* description */}
         <p className='line-clamp-2 grow-0'>{description}</p>
 
-        <div className='flex gap-4'>
+        <div className='flex gap-4 flex-wrap'>
           <span className='border border-royal-blue text-royal-blue px-4 py-1 rounded-full'>{segment_name}</span>
           <span className='border border-royal-blue text-royal-blue px-4 py-1 rounded-full'>For {status}</span>
         </div>

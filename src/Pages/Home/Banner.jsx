@@ -21,7 +21,7 @@ const Banner = () => {
   }, []);
 
   return (
-    <section className='mb-10'>
+    <section className='mb-6 md:mb-8 lg:mb-10'>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}

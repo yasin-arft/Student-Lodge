@@ -4,7 +4,7 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaGithub } from "react-icons/fa";
 const Footer = () => {
   return (
     <div className="container mx-auto px-3">
-      <footer className="footer footer-center p-16 rounded">
+      <footer className="footer footer-center p-5 md:p-8 lg:p-16 rounded">
         <nav className="grid grid-flow-col gap-4">
           <Link className="link link-hover" to={'/'}>Home</Link>
           <Link className="link link-hover" to={'/update_profile'}>Update Profile</Link>
