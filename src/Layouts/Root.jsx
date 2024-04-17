@@ -7,6 +7,9 @@ import { AuthContext } from "../Providers/AuthContextProvider";
 import Loader from "../Components/Loader";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 const Root = () => {
   // estate data

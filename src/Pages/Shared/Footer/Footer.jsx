@@ -13,10 +13,10 @@ const Footer = () => {
         </nav>
         <nav>
           <div className="grid grid-flow-col gap-4">
-            <a><FaFacebookF className="text-xl cursor-pointer" /></a>
-            <a><FaInstagram className="text-xl cursor-pointer" /></a>
-            <a><FaTwitter className="text-xl cursor-pointer" /></a>
-            <a><FaGithub className="text-xl cursor-pointer" /></a>
+            <a data-aos="flip-up" data-aos-duration="300" data-aos-delay='0'><FaFacebookF className="text-xl cursor-pointer" /></a>
+            <a data-aos="flip-up" data-aos-duration="300" data-aos-delay='150'><FaInstagram className="text-xl cursor-pointer" /></a>
+            <a data-aos="flip-up" data-aos-duration="300" data-aos-delay='450'><FaTwitter className="text-xl cursor-pointer" /></a>
+            <a data-aos="flip-up" data-aos-duration="300" data-aos-delay='750'><FaGithub className="text-xl cursor-pointer" /></a>
           </div>
         </nav>
         <aside>

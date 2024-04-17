@@ -8,7 +8,7 @@ const EstateCard = ({ estate }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="card p-3 md:p-5 border border-gray">
+    <div data-aos="zoom-in" data-aos-duration="1500" className="card p-3 md:p-5 border border-gray">
       <figure className='max-h-52'><img className='h-full w-full' src={image} alt="Shoes" /></figure>
       <div className="card-body p-0 pt-4 md:pt-6">
         {/* title */}

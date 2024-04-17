@@ -21,7 +21,7 @@ const Banner = () => {
   }, []);
 
   return (
-    <section className='mb-6 md:mb-8 lg:mb-10'>
+    <section data-aos="fade-left" data-aos-duration="2000" className='mb-6 md:mb-8 lg:mb-10 md:min-h-[80vh]'>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
