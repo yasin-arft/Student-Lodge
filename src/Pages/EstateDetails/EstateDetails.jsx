@@ -19,12 +19,12 @@ const EstateDetails = () => {
       </Helmet>
 
       <div className="hero-content flex-col lg:flex-row">
-        <img src={image} className="w-full md:max-w-sm rounded-lg shadow-2xl" />
+        <img data-aos='zoom-in' data-aos-duration='1000' src={image} className="w-full md:max-w-sm rounded-lg shadow-2xl" />
         <div>
-          <h1 className="text-2xl md:text-3xl font-bold">{estate_title}</h1>
-          <p className="py-4 md:py-6">{description}</p>
-          <span className='font-medium'>Facilities</span>
-          <ul>
+          <h1 data-aos='fade-left' data-aos-duration='1000' className="text-2xl md:text-3xl font-bold">{estate_title}</h1>
+          <p data-aos='fade-left' data-aos-duration='1000' data-aos-delay='300' className="py-4 md:py-6">{description}</p>
+          <span className='font-medium' data-aos='fade-left' data-aos-duration='1000' data-aos-delay='600' >Facilities</span>
+          <ul data-aos='fade-left' data-aos-duration='1000' data-aos-delay='900' >
             {
               facilities.map((item, idx) => <li
                 key={idx}
@@ -36,7 +36,7 @@ const EstateDetails = () => {
             }
           </ul>
           {/* info */}
-          <div className='flex gap-2 md:gap-4 flex-wrap font-medium mt-3'>
+          <div data-aos='fade-left' data-aos-duration='1000' data-aos-delay='1200' className='flex gap-2 md:gap-4 flex-wrap font-medium mt-3'>
             <span className='bg-[#ddd] px-4 py-1 rounded-full'>{segment_name}</span>
             <span className='bg-[#ddd] px-4 py-1 rounded-full'>For {status}</span>
             <span className='bg-[#ddd] px-4 py-1 rounded-full'>Price: {price} BDT</span>
